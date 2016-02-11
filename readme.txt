@@ -22,6 +22,9 @@ dabei Name und E-Mail-Adresse als POST-Parameter übergeben.
 
 Die IDs der Ziel-Listen können als Parameter "list_ids" (kommasepariert) oder "list_id" (nur eine ID) übergeben werden - 
 entweder ebenfalls als POST-Parameter, oder als Parameter im Shortcode.
+
+Wenn im Shortcode ein Parameter "secret" gesetzt wird, dann wird die API nur ausgeführt, wenn der gleiche Inhalt
+auch in einem POST-Parameter "secret" mitgesendet wird.
  
 == Screenshots ==
 nothing here
@@ -34,5 +37,7 @@ nothing here
 Gute Nachrichten! Da dieses Plugin unter der GPL veröffentlicht wurde, kann es sowohl privat als auch kommerziell genutzt werden.
  
 == Changelog ==
+= v0.2 (2016-02-11) =
+* Parameter "secret" eingeführt
 = v0.1 (2016-02-10) =
 * Erste Veröffentlichung des Plugins.

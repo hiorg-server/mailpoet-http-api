@@ -3,7 +3,7 @@
   Plugin Name: MailPoet HTTP API
   Plugin URI: https://github.com/hiorgserver/mailpoet-http-api
   Description: HTTP-API, um neue Abonnenten zu MailPoet hinzuzufügen
-  Version: 0.1
+  Version: 0.2
   Author: HiOrg Server GmbH
   Author URI: http://www.hiorg-server.de
   License: GPL
@@ -26,6 +26,11 @@ function mailpoet_get_list_ids() {
 }
 
 function process_http2mailpoet($atts) {
+    
+    extract(shortcode_atts(array("secret" => ""), $atts));
+    if(!empty($secret) && ($_REQUEST["secret"]!=$secret)) {
+        return "ERROR: invalid secret";
+    }
     
     // required as REQUEST: email
     $email = $_REQUEST["email"];
